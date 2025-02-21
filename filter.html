@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with Filters</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f8f8;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .gallery img {
+            width: 30%;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .filters {
+            margin-bottom: 20px;
+        }
+        .filter-btn {
+            background-color: #ff6347;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .filter-btn.active {
+            background-color: #e5533d;
+        }
+        .filter-btn:hover {
+            background-color: #e5533d;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery with Filters</h1>
+    <div class="filters">
+        <button class="filter-btn" onclick="filterImages('all')">All</button>
+        <button class="filter-btn" onclick="filterImages('nature')">Nature</button>
+        <button class="filter-btn" onclick="filterImages('animals')">Animals</button>
+        <button class="filter-btn" onclick="filterImages('cityscapes')">Cityscapes</button>
+    </div>
+    <div class="gallery">
+        <img src="image1.jpg" alt="Nature" class="image nature">
+        <img src="image2.jpg" alt="Animals" class="image animals">
+        <img src="image3.jpg" alt="Cityscapes" class="image cityscapes">
+        <img src="image4.jpg" alt="Nature" class="image nature">
+        <img src="image5.jpg" alt="Animals" class="image animals">
+        <img src="image6.jpg" alt="Cityscapes" class="image cityscapes">
+        <!-- Add more images as needed -->
+    </div>
+
+    <script>
+        function filterImages(category) {
+            const images = document.querySelectorAll('.image');
+            images.forEach(image => {
+                if (category === 'all') {
+                    image.style.display = 'block';
+                } else {
+                    if (image.classList.contains(category)) {
+                        image.style.display = 'block';
+                    } else {
+                        image.style.display = 'none';
+                    }
+                }
+            });
+
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        // Default to show all images
+        filterImages('all');
+    </script>
+</body>
+</html>

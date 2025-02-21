@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery with Filters</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Gallery</h1>
+        
+        <!-- Filter Buttons -->
+        <div class="filter-buttons">
+            <button class="filter-btn" onclick="filterImages('all')">All</button>
+            <button class="filter-btn" onclick="filterImages('nature')">Nature</button>
+            <button class="filter-btn" onclick="filterImages('animals')">Animals</button>
+            <button class="filter-btn" onclick="filterImages('cityscape')">Cityscape</button>
+        </div>
+        
+        <!-- Gallery -->
+        <div class="gallery">
+            <div class="gallery-item nature">
+                <img src="C:\Users\varsh\OneDrive\Desktop\vanshika\image1.jpg" alt="Nature Image 1">
+            </div>
+            <div class="gallery-item animals">
+                <img src="C:\Users\varsh\OneDrive\Desktop\vanshika\a2.jpg" alt="Animal Image 1">
+            </div>
+            <div class="gallery-item cityscape">
+                <img src="C:\Users\varsh\OneDrive\Desktop\vanshika\download (1).jpg" alt="Cityscape Image 1">
+            </div>
+            <div class="gallery-item nature">
+                <img src="C:\Users\varsh\OneDrive\Desktop\vanshika\image1.jpg" alt="Nature Image 2">
+            </div>
+            <div class="gallery-item animals">
+                <img src="C:\Users\varsh\OneDrive\Desktop\vanshika\a1.jpg" alt="Animal Image 2">
+            </div>
+            <div class="gallery-item cityscape">
+                <img src="C:\Users\varsh\OneDrive\Desktop\vanshika\download (2).jpg" alt="Cityscape Image 2">
+            </div>
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <script src="js.js"></script>
+</body>
+</html>
